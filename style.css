@@ -45,8 +45,14 @@ header a {
 /* article link transitions */
 main a {
   color: var(--danger-color);
+  transition: background-color 1s, color 1s;
 }
 /* end article link transitions */
+
+main a:hover {
+  color: white;
+  background-color: var(--danger-color);
+}
 
 main > article, nav{
   max-width: 1200px;
@@ -102,6 +108,10 @@ section.hero > button {
   cursor: pointer;
 }
 
+section.hero > button:hover {
+  animation: clickMe 0.5s linear 0s infinite alternate;
+}
+
 main article {
   padding: 48px 96px;
 }
@@ -126,4 +136,18 @@ footer {
   text-transform: uppercase;
   padding: 24px 0;
   color: var(--off-white);
+}
+
+nav > a {
+  font-size: 100%;
+  transition: font-size 1s;
+}
+
+nav > a:hover {
+  font-size: 200%;
+}
+
+@keyframes clickMe {
+  0% {background-color: var(--secondary-color);}
+  100% {background-color: var(--danger-color);}
 }
